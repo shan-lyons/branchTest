@@ -67,4 +67,12 @@ public class UserProfileRestController {
         return profileManagementService.getProfile(new Email.Builder().email(email).build());
     }
 
+    @RequestMapping("/login")
+    @ResponseBody
+    public Profile login(final HttpServletRequest request, final HttpServletResponse response) throws ProfileException {
+        final String email = request.getParameter(EMAIL_PARAM);
+
+        return profileManagementService.getProfile(new Email.Builder().email(email).build());
+    }
+
 }
